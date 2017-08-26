@@ -11,5 +11,4 @@ function post(object){
   var data = getData();
   data.push(object);
   localStorage.setItem("data", JSON.stringify(data));
-  console.log(data);
 }
