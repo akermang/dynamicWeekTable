@@ -1,10 +1,18 @@
 var mockData = [
   {
     tdId: 1,
-    text: "galgal"
+    text: "Sunday"
+  },
+  {
+    tdId: 2,
+    text: "Monday"
   },
   {
     tdId: 3,
-    text: "blabla"
-  }
+    text: "Tusday"
+  },
+   {
+      tdId: 4,
+      text: "wednesday"
+    }
 ]

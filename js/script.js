@@ -48,6 +48,6 @@ function populateTable() {
   for(var i = 0; i < data.length; i++) {
     var item = data[i];
     var td = tds[item.tdId];
-    td.children[0].value = item.text;     
+    td.children[0].value = item.text;
   }
 }
