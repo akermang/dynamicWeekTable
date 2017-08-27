@@ -44,7 +44,7 @@ body, html {
 /* line 34, ../scss/base/_reset.scss */
 body {
   line-height: 1;
-  background-color: #0D0D81;
+  background-color: #A2A2C4;
 }
 
 /* line 37, ../scss/base/_reset.scss */
@@ -71,7 +71,7 @@ table {
 }
 
 textarea{
-  background-color:#1D5C3D;
+  background-color:#505F58;
   color: white;
 }
 
