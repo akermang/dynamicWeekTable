@@ -79,3 +79,7 @@ button{
   background-color: #1D5C3D;
   color: white;
 }
+
+td{
+  width: 50px;
+}
