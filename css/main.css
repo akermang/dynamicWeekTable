@@ -70,21 +70,23 @@ table {
   border-spacing: 0;
 }
 
-textarea{
-  background-color:rgb(162, 164, 196);
-  color: white;
-  height: 40px;
-  }
+textarea {
+  cursor: text;
+  outline: 0; border:1px solid #35a4ff;
+  background-color:#fff;
+ }  
 
 button{
   background-color: rgb(155, 158, 194);
   color: rgba(255, 255, 255, 0.52);
   border-radius: 40%;
   border: 1px solid rgba(255, 255, 255, 0.52);
+  outline: 0;
+  display:block;
 }
 
 td{
-  width: 12%;
+  width: 140px;
   border: 1px solid white;
   height: 50px; 
 }

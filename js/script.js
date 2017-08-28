@@ -10,17 +10,12 @@ function createTable() {
     var tr= document.createElement("tr");
     for(j = 0; j < 8; j++){
 
-      var td=       document.createElement("td");
+      var td = document.createElement("td");
       var tdId = 8*i+j;
-      td.setAttribute("id", tdId);
-      var textArea= document.createElement("textarea");
-      var button=   document.createElement("button");
-
-      button.innerText= "Save Text";
-      button.addEventListener('click', save.bind(this, textArea,tdId));
-
-      td.appendChild(textArea);
-      td.appendChild(button);
+      var textArea = document.createElement("textarea");
+      textArea.setAttribute('class', 'ta');
+      td.setAttribute("id", tdId);      
+      td.addEventListener("click",openTextArea.bind(this, textArea, td));
       tr.appendChild(td);
     }
     table1.appendChild(tr);
@@ -28,13 +23,24 @@ function createTable() {
 
 };
 
-function save(textArea, tdId, e){
+function openTextArea(textArea, td){
+  textArea.value = td.innerText;
+  if(!td.children.length) {
+    td.appendChild(textArea); 
+    textArea.focus();    
+    textArea.addEventListener('blur', save.bind(this, textArea, td));
+  }
+}
+
+function save(textArea, td, e){
   var text = textArea.value;
 
   var d = {
-    tdId: tdId,
+    tdId: td.id,
     text: text
   };
+
+  td.removeChild(textArea);
   post(d);
   populateTable();
 };
@@ -48,6 +54,6 @@ function populateTable() {
   for(var i = 0; i < data.length; i++) {
     var item = data[i];
     var td = tds[item.tdId];
-    td.children[0].value = item.text;
+    td.innerHTML = item.text;
   }
 }
