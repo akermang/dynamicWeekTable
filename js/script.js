@@ -10,12 +10,16 @@ function createTable() {
     var tr= document.createElement("tr");
     for(j = 0; j < 8; j++){
 
-      var td = document.createElement("td");
+      var td = document.createElement("td");      
       var tdId = 8*i+j;
       var textArea = document.createElement("textarea");
+      
       textArea.setAttribute('class', 'ta');
       td.setAttribute("id", tdId);      
+
       td.addEventListener("click",openTextArea.bind(this, textArea, td));
+      textArea.addEventListener('blur', save.bind(this, textArea, td));
+
       tr.appendChild(td);
     }
     table1.appendChild(tr);
@@ -27,8 +31,7 @@ function openTextArea(textArea, td){
   textArea.value = td.innerText;
   if(!td.children.length) {
     td.appendChild(textArea); 
-    textArea.focus();    
-    textArea.addEventListener('blur', save.bind(this, textArea, td));
+    textArea.focus();        
   }
 }
 
@@ -39,10 +42,11 @@ function save(textArea, td, e){
     tdId: td.id,
     text: text
   };
-
+  
   td.removeChild(textArea);
+  td.innerText = text;
+
   post(d);
-  populateTable();
 };
 
 function populateTable() {
