@@ -71,15 +71,18 @@ table {
 }
 
 textarea{
-  background-color:#505F58;
+  background-color:rgb(162, 164, 196);
   color: white;
 }
 
 button{
-  background-color: #1D5C3D;
+  background-color: rgb(162, 164, 196);
   color: white;
 }
 
 td{
-  width: 50px;
+  width: 12%;
+  border: 1px solid white;
+  border-radius: 15%;
+  height: 30px; 
 }
