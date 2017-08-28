@@ -27,11 +27,20 @@ function createTable() {
 
 };
 
-function openTextArea(textArea, td){
-  textArea.value = td.innerText;
-  if(!td.children.length) {
+var selectedCellId = null;
+
+function openTextArea(textArea, td){  
+
+  if(selectedCellId !== td.id) {
+    textArea.value = td.innerText;
+  }
+
+  var hasTextArea = td.querySelector('textarea');
+  
+  if(!hasTextArea) { 
     td.appendChild(textArea); 
-    textArea.focus();        
+    textArea.focus();       
+    selectedCellId = td.id; 
   }
 }
 
