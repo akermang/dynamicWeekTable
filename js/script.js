@@ -6,7 +6,7 @@ function init() {
 }
 
 function createTable() {
-  for(i = 0; i < 16; i++){
+  for(i = 0; i < 7; i++){
     var tr= document.createElement("tr");
     for(j = 0; j < 8; j++){
 
